@@ -1,48 +1,50 @@
 <template>
-  <swiper :effect="'coverflow'" :grabCursor="true" :centeredSlides="true" :slidesPerView="'auto'" :loop="true"
-    :loopAdditionalSlides="2" :autoplay="{
+  <swiper 
+    :grabCursor="true" 
+    :centeredSlides="true" 
+    :slidesPerView="3" 
+    :spaceBetween="30"
+    :loop="true"
+    :loopAdditionalSlides="2"
+    :autoplay="{
       delay: 3000,
       disableOnInteraction: false,
-    }" :coverflowEffect="{
-      rotate: 30,
-      stretch: 0,
-      depth: 150,
-      modifier: 1.5,
-      slideShadows: true,
-    }" :pagination="{
+    }"
+    :speed="800"
+    :pagination="{
       clickable: true,
-    }" :modules="modules" class="mySwiper">
+    }" 
+    :modules="modules" 
+    class="mySwiper"
+  >
     <swiper-slide>
-      <img src="/chi1.png" />
+      <img src="/chi1.png" alt="图片1" />
     </swiper-slide>
     <swiper-slide>
-      <img src="/chi2.png" />
+      <img src="/chi2.png" alt="图片2" />
     </swiper-slide>
     <swiper-slide>
-      <img src="/chi3.png" />
+      <img src="/chi3.png" alt="图片3" />
     </swiper-slide>
     <swiper-slide>
-      <img src="/chi4.png" />
+      <img src="/chi4.png" alt="图片4" />
     </swiper-slide>
     <swiper-slide>
-      <img src="/chi5.png" />
+      <img src="/chi5.png" alt="图片5" />
     </swiper-slide>
   </swiper>
 </template>
 <script>
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
-
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 import './style.css';
 
 // import required modules
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 export default {
   components: {
@@ -51,7 +53,7 @@ export default {
   },
   setup() {
     return {
-      modules: [EffectCoverflow, Pagination, Autoplay],
+      modules: [Pagination, Autoplay],
     };
   },
 };
